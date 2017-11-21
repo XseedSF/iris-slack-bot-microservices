@@ -24,7 +24,7 @@ service.get('/service/:location', (req, res, next) => {
                 }
                 
                 const result = response.body;
-    
+                console.log("result", result, "TIMEZONE_API_KEY", keys.TIMEZONE_API_KEY);
                 const timeString = moment.unix(timestamp + result.dstOffset + result.rawOffset).utc().format('dddd, MMMM Do YYYY, h:mm:ss a');
             
                 res.json({result: timeString});

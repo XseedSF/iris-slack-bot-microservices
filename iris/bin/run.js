@@ -16,7 +16,9 @@ const serviceRegistry = service.get('serviceRegistry');
 const rtm = slackClient.init(slackToken, slackLogLevel, witClient, serviceRegistry);
 rtm.start();
 
-slackClient.addAuthenticatedHandler(rtm, () => server.listen(3000));
+const PORT = process.env.PORT || 5000;
+
+slackClient.addAuthenticatedHandler(rtm, () => server.listen(PORT));
 
 server.on('listening', function() {
     console.log(`IRIS is listening on ${server.address().port} in ${service.get('env')} mode.`);

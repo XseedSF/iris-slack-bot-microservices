@@ -6,7 +6,7 @@ const http = require('http');
 const keys = require('../config/keys');
 
 const server = http.createServer(service);
-server.listen();
+server.listen(process.env.PORT || 3011);
 
 server.on('listening', function() {
     console.log(`IRIS-TIME is listening on ${server.address().port} in ${service.get('env')} mode.`);

@@ -1,9 +1,14 @@
 {
   "name": "iris",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
-  "main": "server/service.js",
+  "main": "bin/run.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
+    "start": "node bin/run.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dado",
